@@ -2,13 +2,15 @@ Con el uso de xmllint --shell realiza las siguientes consultas que retornen:
 
 1.La temperatura máxima y mínima para pasado mañana (dos consultas)
 -cat /root/prediccion/dia[3]/temperatura/maxima/text()
--catcat /root/prediccion/dia[3]/temperatura/minima/text()
+-cat /root/prediccion/dia[3]/temperatura/minima/text()
 2.La temperatura prevista para hoy a las seis de la tarde.
 -cat /root/prediccion/dia[@fecha="2022-01-28"]/temperatura/dato[@hora=18]/text()
 3.La descripción para el estado del cielo de hoy
 -cat /root//prediccion/dia[@fecha="2022-01-28"]/estado_cielo[@periodo="00-24"]/@descripcion
 4.La cota de nieve para mañana.
+-cat root/prediccion/dia[@fecha="2022-01-29"]/cota_nieve_prov[@periodo="00-24"]
 5.Humedad relativa de mañana.
+-cat //dia[@fecha="2022-01-29"]/humedad_relativa/maxima/text()
 6.Todos los índices UV.
 -cat //uv_max 
 7.Las fechas de los días que tenemos predicción.
