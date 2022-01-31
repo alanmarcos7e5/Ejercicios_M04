@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<classe>
+	<assignatura>Llenguatges de marques</assignatura>
+	<professor Especialitat="507">
+		<nom>Marcel</nom>
+		<cognoms>Puig</cognoms>
+	</professor>
+	<alumnes>
+		<alumne>
+			<nom>Frederic</nom>
+			<cognoms>Pi</cognoms>
+		</alumne>
+		<alumne>
+			<nom>Filomeno</nom>
+			<cognoms>Garcia</cognoms>
+		</alumne>
+	</alumnes>
+</classe>
