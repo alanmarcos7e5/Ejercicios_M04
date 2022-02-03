@@ -1,0 +1,8 @@
+Usando el fichero libreria.xml contesta plantea las siguiente expresiones:
+Los libros escritos por Mario Vargas Llosa
+Los libros con un precio inferior a 30.00€
+Los libros con fecha de publicación
+Todos los títulos de la librería
+    cat //titulo
+El último libro de la lista de libros
+    cat //libro[last()]

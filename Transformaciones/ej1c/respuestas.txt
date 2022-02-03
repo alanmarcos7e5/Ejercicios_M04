@@ -1,0 +1,11 @@
+Retorna la humedad relativa de pasado mañana.
+    cat //dia[@fecha="2022-02-05"]/humedad_relativa
+La fecha del último día que tenemos predicción
+    cat //dia[last()]
+Las temperatura mínimas mayores de 10º
+    cat //temperatura/minima[text()<10]
+Las temperatura mínimas mayores que 2º y menores que 9º
+    cat //temperatura/minima[text()<10 and text()>2]
+Retorna las fechas que tengan definida una racha_max
+    --todo
+
