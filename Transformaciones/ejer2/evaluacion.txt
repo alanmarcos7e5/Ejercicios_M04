@@ -1,0 +1,6 @@
+evaluacion/alumno/nombre
+evaluacion/alumno/apellido
+evaluacion/alumno/telefono
+//alumno/@repite
+//alumno/notas/practicas
+//alumno/notas/examen
