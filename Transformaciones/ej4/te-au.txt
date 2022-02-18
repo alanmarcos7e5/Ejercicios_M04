@@ -1,0 +1,8 @@
+/programacio/audiencia/hora
+/programacio/audiencia/cadenas/cadena[@nom="Un TV"]
+/programacio/audiencia/cadenas/cadena/text()
+/programacio/audiencia/cadenas/cadena[@nom="Un TV"]/@percentatge
+
+
+comando a ejecutar en terminal para transformar y generar:
+    xsltproc ej4/unTV_translate.xsl ej4/tele-audiencia.xml > ej4/salida.xml
