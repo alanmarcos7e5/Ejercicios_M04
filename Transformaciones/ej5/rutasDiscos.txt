@@ -1,0 +1,4 @@
+/discos/group/@id   --id del group
+/discos/disco/interpreter[@id]
+/discos/group[@id="feeder"] --muestra todo el grupo feeder
+/discos/disco[interpreter[@id="muse"]]/title --titulo donde antes el interprete sea muse
