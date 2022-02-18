@@ -22,6 +22,7 @@
                 <th><xsl:value-of select="telefono"></xsl:value-of></th>
                 <th><xsl:value-of select="@repite"></xsl:value-of></th>
                 <xsl:apply-templates match="notas"/>
+                <xsl:apply-templates match="foto"/>
             </tr>
             </xsl:for-each>
         </table>
@@ -41,6 +42,10 @@
         <xsl:if test="(practicas + examen) div 2 &gt;= 5 and (practicas + examen) div 2 &lt; 8"> 
         <th style="background-color:grey"><xsl:value-of select="(practicas + examen) div 2"></xsl:value-of></th>
         </xsl:if>
+       
+    </xsl:template>
+    <xsl:template match="foto">
+        
        
     </xsl:template>
 

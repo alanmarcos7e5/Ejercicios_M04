@@ -8,6 +8,7 @@
 			<practicas>7</practicas>
 			<examen>8</examen>
 		</notas>
+		<foto></foto>
 	</alumno>
 	<alumno>
 		<nombre>Ramon</nombre>
@@ -17,6 +18,7 @@
 			<practicas>8</practicas>
 			<examen>9</examen>
 		</notas>
+		<foto></foto>
 	</alumno>
 	<alumno>
 		<nombre>Manuela</nombre>
@@ -26,6 +28,7 @@
 			<practicas>9</practicas>
 			<examen>6</examen>
 		</notas>
+		<foto></foto>
 	</alumno>
 	<alumno>
 		<nombre>Patricia</nombre>
@@ -35,6 +38,7 @@
 			<practicas>5</practicas>
 			<examen>3</examen>
 		</notas>
+		<foto></foto>
 	</alumno>
 	<alumno>
 		<nombre>Oscar</nombre>
@@ -44,6 +48,7 @@
 			<practicas>2</practicas>
 			<examen>4</examen>
 		</notas>
+		<foto></foto>
 	</alumno>
 	<alumno repite="si">
 		<nombre>Pablo</nombre>
@@ -53,5 +58,6 @@
 			<practicas>7</practicas>
 			<examen>3</examen>
 		</notas>
+		<foto></foto>
 	</alumno>
 </evaluacion>
