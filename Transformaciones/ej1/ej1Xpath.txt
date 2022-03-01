@@ -1,0 +1,8 @@
+xmllint --shell tiempo.xml
+fecha: cat /root/prediccion/dia/@fecha
+máxima: cat /root/prediccion/dia/temperatura/maxima
+mínima: cat /root/prediccion/dia/temperatura/minima 
+estado_cielo: cat /root/prediccion/dia/estado_cielo[@periodo='00-24']/@descripcion
+
+prob_precipitacion: cat /root/prediccion/dia/prob_precipitacion[@periodo='00-24']
+provincia: cat /root/provincia 

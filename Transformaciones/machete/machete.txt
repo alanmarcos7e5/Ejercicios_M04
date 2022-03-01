@@ -1,0 +1,3 @@
+xmllint --shell [archivo.xml]
+
+xsltproc [archivo.xsl] [archivo.xml] > [archivo transformado]
