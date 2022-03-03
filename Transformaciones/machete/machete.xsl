@@ -17,11 +17,17 @@
             </xsl:otherwise>        
         </xsl:choose>
         
-        <xsl:if test="">
+        <xsl:if test="cualquier condicion">
         </xsl:if>    
-         
+        <!-- ejemplo de concat-->
+        <img src="{concat('../',$recetaId/informacio_general/foto)}"></img>
+       
         <img>
             <xsl:attribute name="src">images/tormenta.png</xsl:attribute>
+        </img> 
+         <!-- ejemplo de attribute-->
+        <img>
+            <xsl:attribute name="src"> <xsl:value-of select="$recetaId/informacio_general/foto"></xsl:value-of> </xsl:attribute>
         </img> 
 
     </xsl:template>
