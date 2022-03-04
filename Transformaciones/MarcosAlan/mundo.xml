@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="mundo.xsl"?>
+<mundo>
+	<continente>
+		<nombre color="green">Africa</nombre>
+				<paises>
+			<pais>
+				<nombre idioma="francés" gobierno="republica">Senegal</nombre>
+				<capital poblacion="">Dakar</capital>
+				<foto>senegal.png</foto>
+
+			</pais>
+			<pais>
+				<nombre idioma="árabe, bereber" gobierno="monarquia">Marruecos</nombre>
+				<capital poblacion="577827">Rabat</capital>
+				<foto>marruecos.png</foto>
+			</pais>
+		</paises>
+	</continente>
+	<continente>
+		<nombre color="lightgray">Europe</nombre>
+		<paises>
+			<pais>
+				<nombre idioma="francés" gobierno="republica">Francia</nombre>
+				<capital poblacion="2161000">Paris</capital>
+				<foto>francia.png</foto>
+			</pais>
+			<pais>
+				<nombre idioma="alemán" gobierno="republica">Alemania</nombre>
+				<capital poblacion="3645000">Berlin</capital>
+				<foto>alemania.png</foto>
+			</pais>
+		</paises>
+	</continente>
+	<continente>
+		<nombre color="blue">Oceanía</nombre>
+		<paises>
+			<pais>
+				<nombre idioma="inglés" gobierno="monarquia">Australia</nombre>
+				<capital poblacion="">Sidney</capital>
+				<foto>australia.png</foto>
+			</pais>
+		</paises>
+	</continente>
+	<continente>
+		<nombre color="yellow">Asia</nombre>
+		<paises>
+			<pais>
+				<nombre idioma="vietnamita" gobierno="republica">Vietnam</nombre>
+				<capital poblacion="6699600">Hanoi</capital>
+				<foto>vietnam.png</foto>
+			</pais>
+			<pais>
+				<nombre idioma="chinos mandarin" gobierno="dictadura">China</nombre>
+				<capital poblacion="">Pekín</capital>
+				<foto>china.png</foto>
+			</pais>
+		</paises>
+	</continente>
+	<continente>
+		<nombre color="red">America</nombre>
+		<paises>
+			<pais>
+				<nombre idioma="español" gobierno="republica">Colombia</nombre>
+				<capital poblacion="">Bogotá</capital>
+				<foto>colombia.png</foto>
+			</pais>
+			<pais>
+				<nombre idioma="español" gobierno="republica">Argentina</nombre>
+				<capital poblacion="3075646">Buenos Aires</capital>
+				<foto>argentina.png</foto>
+			</pais>
+			
+		</paises>
+	</continente>
+</mundo>

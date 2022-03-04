@@ -16,7 +16,7 @@
             <xsl:otherwise>
             </xsl:otherwise>        
         </xsl:choose>
-        
+        style="background-color:lightblue"
         <xsl:if test="cualquier condicion">
         </xsl:if>    
         <!-- ejemplo de concat-->

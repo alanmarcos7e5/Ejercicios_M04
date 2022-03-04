@@ -1,0 +1,8 @@
+cat /mundo/continente   --cada continente
+cat /mundo/continente/nombre --nombre continente
+cat /mundo/continente/nombre/@color --color continente 
+
+cat /mundo/continente/paises/pais/foto --bandera pais
+cat /mundo/continente/paises/pais/nombre --pais nombre
+cat /mundo/continente/paises/pais/nombre/@gobierno --gobierno pais
+cat /mundo/continente/paises/pais/capital --capital país
