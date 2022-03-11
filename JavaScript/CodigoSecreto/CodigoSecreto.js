@@ -68,7 +68,7 @@ function compareArrays(pcSecretCode,userSecretCode) {
     let compareResult = []
     for (let iPc = 0; iPc < pcSecretCode.length; iPc++) {
         for (let iU = 0; iU < userSecretCode.length; iU++) {
-            if (iPc == iU && userSecretCode[iU] == pcSecretCode[iPc]) {
+            if (userSecretCode[iPc] == pcSecretCode[iPc]) {
                 compareResult.push("Ok")
             } else {
                 compareResult.push(numberTimesInArray(pcSecretCode,userSecretCode[iU]))
