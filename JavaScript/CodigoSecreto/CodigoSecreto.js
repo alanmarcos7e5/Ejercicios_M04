@@ -5,7 +5,8 @@ function main() {
     let codigoSecreto = getSecretCode()
     console.log(codigoSecreto)
     
-    /*
+    /*El bloque comentado tiene el código para ir respondiendo los ítems
+    algunas líneas ya no son de utilidad.
     //ingreso numero
     let userInputNumber = prompt("Ingresá un número entero:")
     let numberTimes = numberTimesInArray(codigoSecreto,userInputNumber)
@@ -22,8 +23,6 @@ function main() {
 
     //verifico comparando las listas
     console.log(compareArrays(codigoSecreto,userSecretCode))
-    
-    
 }
 
 function getSecretCode() {
@@ -44,7 +43,7 @@ function numberTimesInArray(secretCode,numberToSearch) {
     }
     return count
 }
-
+/* //realizada para responder los primeros ítems, ya no es de utilidad
 function verifyPosition(secretCode,numberToSearch,indicatedPosition) {
     for (let i = 0; i < secretCode.length; i++) {
         if (secretCode[i] == numberToSearch && i == indicatedPosition) {
@@ -52,12 +51,12 @@ function verifyPosition(secretCode,numberToSearch,indicatedPosition) {
         }
     }
     return false
-}
+} */
 
 function inputsUser(pcSecretCode) {
     let userSecretCode = []
     for (let i = 0; i < pcSecretCode.length; i++) {
-        const userInput = prompt("Ingresá el número de la posición ${i}:")
+        const userInput = prompt(`Ingresá el número de la posición ${i}:`)
         userSecretCode.push(userInput)
         
     }
@@ -65,14 +64,12 @@ function inputsUser(pcSecretCode) {
 }
 
 function compareArrays(pcSecretCode,userSecretCode) {
-    let compareResult = []
-    for (let iPc = 0; iPc < pcSecretCode.length; iPc++) {
-        for (let iU = 0; iU < userSecretCode.length; iU++) {
-            if (userSecretCode[iPc] == pcSecretCode[iPc]) {
-                compareResult.push("Ok")
-            } else {
-                compareResult.push(numberTimesInArray(pcSecretCode,userSecretCode[iU]))
-            }   
+    let compareResult = userSecretCode
+    for (let iu = 0; iu < userSecretCode.length; iu++) {
+        if (userSecretCode[iu] == pcSecretCode[iu]) {
+            compareResult[iu] = "ok"
+        }else{
+            compareResult[iu] = numberTimesInArray(pcSecretCode,userSecretCode[iu])
         }
     }
     return compareResult
