@@ -16,13 +16,24 @@ function main() {
     let indicatedPosition = verifyPosition(codigoSecreto,userInputNumber,userInputPosition)
     console.log(indicatedPosition)
     */
-
-    //pido a usuario un número por cada elemento del array
-    let userSecretCode = inputsUser(codigoSecreto)
-    console.log(userSecretCode)
-
-    //verifico comparando las listas
-    console.log(compareArrays(codigoSecreto,userSecretCode))
+   let triedTimes = 0
+   let equalsLists = false
+   do {
+        //pido a usuario un número por cada elemento del array
+        let userSecretCode = inputsUser(codigoSecreto)
+        console.log(userSecretCode)
+    
+        //verifico comparando las listas
+        let compare = compareArrays(codigoSecreto,userSecretCode)
+        console.log(compare)
+    
+        //TODO (consultar cómo comparar listas, si son iguales entre sí)
+        //porque no las encuentra iguales nunca
+        equalsLists = areEquals(codigoSecreto,userSecretCode)
+        triedTimes++
+   } while (!equalsLists && triedTimes < 3);
+   //llama a función que muestra el resultado
+   console.log(getResult(equalsLists,triedTimes))
 }
 
 function getSecretCode() {
@@ -57,7 +68,8 @@ function inputsUser(pcSecretCode) {
     let userSecretCode = []
     for (let i = 0; i < pcSecretCode.length; i++) {
         const userInput = prompt(`Ingresá el número de la posición ${i}:`)
-        userSecretCode.push(userInput)
+        const userInputInt = parseInt(userInput)
+        userSecretCode.push(userInputInt)
         
     }
     return userSecretCode
@@ -73,4 +85,16 @@ function compareArrays(pcSecretCode,userSecretCode) {
         }
     }
     return compareResult
+}
+
+function areEquals(secretCode,userCode) {
+    for (let i = 0; i < secretCode.length; i++) {
+        if (secretCode[i] != userCode[i]) return false
+    }
+    return true
+}
+
+function getResult(equals,tries) {
+    if (equals) return `Has ganado en ${tries} intentos`
+    else return `Perdiste`
 }
