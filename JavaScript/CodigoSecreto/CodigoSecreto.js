@@ -1,10 +1,9 @@
-console.log(main())
+console.log(main(document))
 
 function main() {
     //codigo secreto
     let codigoSecreto = getSecretCode()
     console.log(codigoSecreto)
-    
     /*El bloque comentado tiene el código para ir respondiendo los ítems
     algunas líneas ya no son de utilidad.
     //ingreso numero
@@ -22,6 +21,7 @@ function main() {
         //pido a usuario un número por cada elemento del array
         let userSecretCode = inputsUser(codigoSecreto)
         console.log(userSecretCode)
+        
     
         //verifico comparando las listas
         let compare = compareArrays(codigoSecreto,userSecretCode)
@@ -35,6 +35,7 @@ function main() {
    //llama a función que muestra el resultado
    console.log(getResult(equalsLists,triedTimes))
 }
+
 
 function getSecretCode() {
     let secretCode = []
