@@ -10,8 +10,10 @@ function main() {
     delete alumno.school
     console.log(makeList(alumno))
 
-    //agregar propiedad
+    //agregar propiedades y calcular edad
+    console.log(calculateYears(alumno))
     
+    console.log(makeList(alumno))
     
 }
 
@@ -31,5 +33,13 @@ function makeList(objeto) {
         listOfProperties.push(objeto[propiedad])
     }
     return listOfProperties
+}
+
+function calculateYears(alumno) {
+    alumno.bornDay = new Date("1994/2/23")
+    dateActual = new Date()
+    let yearsDif = dateActual.getTime() - alumno.bornDay.getTime()
+    alumno.edad = Math.round(yearsDif/(1000 * 60 * 60 * 24 * 365))
+    return alumno.edad
 }
 
