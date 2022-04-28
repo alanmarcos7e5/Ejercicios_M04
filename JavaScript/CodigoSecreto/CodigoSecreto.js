@@ -27,7 +27,7 @@ function main() {
         let compare = compareArrays(codigoSecreto,userSecretCode)
         console.log(compare)
     
-        //TODO (consultar cómo comparar listas, si son iguales entre sí)
+        //(consultar cómo comparar listas, si son iguales entre sí)
         //porque no las encuentra iguales nunca
         equalsLists = areEquals(codigoSecreto,userSecretCode)
         triedTimes++

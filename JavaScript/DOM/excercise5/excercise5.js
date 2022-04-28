@@ -24,9 +24,9 @@ function intercaleRow() {
 }
 
 function modifyValues(table) {
-    //TODO not implemented yet
+    //not implemented yet
 }
 
 function editValue() {
-    //TODO ejercicio 6
+    //ejercicio 6
 }
