@@ -7,7 +7,6 @@ function resaltar() {
         strongWord.style.color = "green"
         strongWord.style.fontSize = "2rem"
     }
-
 }
 function tornaNormal() {
     let strongWords = document.getElementsByTagName("strong")
