@@ -1,7 +1,9 @@
 const codigo = [];
-const maxIntento = 8;
+const maxIntento = 3;
+var turn = 0
 
-codigoSecreto();
+codigoSecreto()
+cloneRow()
 
 /*1. Genera una constante CODIGO_SECRETO de tipo array de 5 número aleatorios
 entre 0 y 9 usando la libreria Math.random();*/
@@ -12,56 +14,103 @@ function codigoSecreto() {
     console.log(codigo)
 }
 
+/*
+Crea todos los bloques de result necesarios segun los turnos
+ */
+function cloneRow() {
+    let resultSection = document.getElementById("Result")
+    let completeRow = resultSection.getElementsByClassName("rowResult w100 flex wrap")
+    let i = 1
+    while (i < maxIntento){
+        let clonedRow = completeRow[0].cloneNode(true)
+        resultSection.appendChild(clonedRow)
+        i++
+    }
+}
+
 /* Compara el numero ingrsado por el usuario
    con el codigo secreto
  */
 function comprobar() {
     let inputUserNum = document.getElementById("numero").value
-    let inputUserArray = numToArray(inputUserNum)
-    console.log(inputUserArray)
+    document.getElementById("numero").focus() //TODO que el foco se coloque al final
+    let inputUserArray = Array.from(inputUserNum)
     let comparedResult = compareTheArrays(codigo,inputUserArray)
-    result(comparedResult)
+
+    console.log(inputUserArray)
+
+    result(inputUserArray, comparedResult)
+    if (checkArrays(comparedResult)) finishGame(true)
+    turn++
+    if (turn == maxIntento) finishGame(false)
 }
 
 /*
-result TODO (colocar los valores en sus casilleros)
+result //TODO ver de aprovechar codigo
  */
-function result(comparedResult) {
+function result(inputUser,comparedResult) {
     let resultSection = document.getElementById("Result")
-    let divw100Array = resultSection.getElementsByClassName("rowResult w100 flex wrap")
-    //TODO esto es sin index
-    for (let divw100ArrayElement of divw100Array) {
-        console.log(divw100ArrayElement) //elemento fila
-        let divW20Array = divw100ArrayElement.getElementsByClassName("w20")
-        for (let divW20ArrayElement of divW20Array) {
-            console.log(divW20ArrayElement.textContent) //elemento celda
-        }
+    let completeRow = resultSection.getElementsByClassName("rowResult w100 flex wrap")
+    //Itera sobre los div padre y modifica valor de div hijo y de div padre
+    let divArray = completeRow[turn].getElementsByClassName("w20")
+    for (let i = 0; i < divArray.length; i++) {
+        let digit = divArray[i]
+        digit.text = comparedResult[i] //al div padre del div result, le agrego el resultado de la comparación
+        //para saber si aparece o no el numero o si es correcto
+        console.log(digit.text)
+        let divWithResult = digit.getElementsByClassName("celResult flex")[0] //con index 0 llamo
+        //al único div hijo que tiene
+        divWithResult.innerText = inputUser[i]
+        //comprobar repeticion del digito para colocar colores
+        if (digit.text == "ok") divWithResult.style.backgroundColor = "green"
+        else if (digit.text != "0") divWithResult.style.backgroundColor = "yellow"
     }
-    //TODO esto es con index
-    for (let ir=0; ir<divw100Array.length; ir++){
-        let divW20Array2 = divw100Array[ir].getElementsByClassName("w20")
-        for (let ic=0; ic<divW20Array2.length; ic++) {
-            divW20Array2[ic].textContent = comparedResult[ic] //TODO coloca el valor en la celda pero
-            // falta implmentarlo fuera del 1er for, dependinedp de el numero de turno
-            console.log(divW20Array2[ic].textContent) //elemento celda
-        }
+}
+//TODO ver de aprovechar codigo
+function resultFinish() {
+    let resultSection = document.getElementById("codigo")
+    let completeRow = resultSection.getElementsByClassName("w100 flex wrap")
+
+    //Itera sobre los div padre y modifica valor de div hijo y de div padre
+    let divArray = completeRow[0].getElementsByClassName("w20")
+    for (let ie = 0; ie < divArray.length; ie++) {
+        let digit = divArray[ie]
+        console.log(digit.text)
+        let divWithResult = digit.getElementsByClassName("cel flex")[0] //con index 0 llamo
+        //al único div hijo que tiene
+        divWithResult.innerText = codigo[ie]
     }
-    //TODO esto es para crear el mismo elemento fila completa, implementarlo en otra función
-    let clonedDiv = divw100Array[0].cloneNode(true)
-    console.log(clonedDiv)
-    resultSection.appendChild(clonedDiv)
+}
+
+
+/*
+A partir de un parámetro bool, realiza las configuraciones
+necesarias de fin de partida
+ */
+function finishGame(result) {
+    let infoToShow = document.getElementById("info")
+    let btnComprobar = document.getElementById("check")
+    btnComprobar.disabled = true
+    btnComprobar.style.backgroundColor = "grey"
+    if (result) infoToShow.textContent = "GANASTE!"
+    else infoToShow.textContent = "Perdiste :(!"
+    resultFinish()
 }
 
 /*
-crea un array con los digitos del numero ingresado por el usuario
+verifica que todos los elementos del array sean "ok"
+si lo son retorna true
+si no false
  */
-function numToArray(num) {
-    let obtainedArray = []
-    while (num > 0){
-        obtainedArray.unshift(num % 10)
-        num = Math.floor(num / 10)
+function checkArrays(comparedResult) {
+    let infoToShow = document.getElementById("info")
+    for (let digit of comparedResult) {
+        if (digit != "ok"){
+            infoToShow.textContent = "Seguí participando"
+            return false
+        }
     }
-    return obtainedArray
+    return true
 }
 
 /*
@@ -69,7 +118,8 @@ Compara ambos arrays y va llamando a la función para
 contar la cantidad de veces que aparece un dígito
  */
 function compareTheArrays(code,inputCode) {
-    let compareResult = inputCode
+    //let compareResult = inputCode //ojo, al modificar al parecer se modifica también inputCode
+    let compareResult = Array.from(inputCode)
     for (let i = 0; i < inputCode.length; i++) {
         if (inputCode[i] == code[i]) {
             compareResult[i] = "ok"
